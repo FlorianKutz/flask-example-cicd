@@ -11,6 +11,6 @@ python3 -m venv venv
 source venv/bin/activate
 echo "Installing development dependencies..."
 pip3 install pip --upgrade
-pip3 install flake8 pylint autopep8 pytest
+pip3 install flake8 pylint autopep8 pytest locust
 COLOR='\033[1;32m'
 echo -e "${COLOR}Now you can build the project manually or by using build.sh"

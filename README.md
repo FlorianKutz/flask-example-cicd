@@ -186,6 +186,7 @@ The script will do following:
     * pylint (Linting)
     * autopep8 (Formatting)
     * pytest (Testing)
+    * locust (Testing - Performance)
 * Remove all folders created by build/install
     * package info (*egg-info)    
     * build folder
