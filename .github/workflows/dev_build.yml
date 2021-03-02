@@ -80,4 +80,4 @@ jobs:
       - name: Run bandit
         uses: jpetrucciani/bandit-check@master
         with:
-          path: '.flaskr'
+          path: './flaskr'
