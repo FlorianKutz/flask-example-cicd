@@ -1,3 +1,3 @@
-flask==1.0.1
+flask==1.1.2
 cython==0.29.21
 auth==0.1.1
