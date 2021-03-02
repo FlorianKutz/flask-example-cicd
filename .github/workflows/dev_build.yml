@@ -3,8 +3,6 @@
 
 name: DEV - Build and Unittest
 
-env:
-  DEP_PATH: requirements.txt
 
 on:
   push:
@@ -57,23 +55,10 @@ jobs:
       run: |
         pytest
 
-  codechecks:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check out master
-        uses: actions/checkout@master
-
-      - name: Security vulnerabilities scan
-        uses: aufdenpunkt/python-safety-check@master
-
   bandit:
     needs: [build]
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        os: [ ubuntu-latest ]
-        python-version: [ '2.7.17' ]
-    name: Python ${{ matrix.python-version }} ${{ matrix.os }} 
+    name: static code checks bandit 
 
     steps:
       - uses: actions/checkout@v2
