@@ -79,3 +79,5 @@ jobs:
       - uses: actions/checkout@v2
       - name: Run bandit
         uses: jpetrucciani/bandit-check@master
+        with:
+          path: '.flaskr'
