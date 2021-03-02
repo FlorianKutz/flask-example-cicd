@@ -55,10 +55,10 @@ jobs:
       run: |
         pytest
 
-  bandit:
+  bandit-scan:
     needs: [build]
     runs-on: ubuntu-latest
-    name: static code checks bandit 
+    name: static code check bandit 
 
     steps:
       - uses: actions/checkout@v2
