@@ -3,6 +3,9 @@
 
 name: DEV - Build and Unittest
 
+env:
+  DEP_PATH: requirements.txt
+
 on:
   push:
     branches-ignore: [ main ]
@@ -53,3 +56,12 @@ jobs:
     - name: Test with pytest
       run: |
         pytest
+
+  codechecks:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out master
+        uses: actions/checkout@master
+
+      - name: Security vulnerabilities scan
+        uses: aufdenpunkt/python-safety-check@master
