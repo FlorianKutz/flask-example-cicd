@@ -67,6 +67,7 @@ jobs:
         uses: aufdenpunkt/python-safety-check@master
 
   bandit:
+    needs: [build]
     runs-on: ubuntu-latest
     strategy:
       matrix:
