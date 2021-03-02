@@ -91,4 +91,5 @@ jobs:
       # if: failure()
       with:
         name: Security report
+        PYTHON_VERSION: 3.6.10
         path: output/security_report.txt
