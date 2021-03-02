@@ -5,6 +5,8 @@ name: DEV - Build and Unittest
 
 env:
   DEP_PATH: requirements.txt
+  PYTHON_VERSION: 3.6.10
+
 
 on:
   push:
