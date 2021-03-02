@@ -5,8 +5,6 @@ name: DEV - Build and Unittest
 
 env:
   DEP_PATH: requirements.txt
-  PYTHON_VERSION: 3.6.10
-
 
 on:
   push:
@@ -79,9 +77,4 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Run bandit
-        uses: tj-actions/bandit@v2
-        with:
-          bandit_version: "1.7.0"
-          project_path: .
-          targets: "."
-          options: "-r"
+        uses: jpetrucciani/bandit-check@master
