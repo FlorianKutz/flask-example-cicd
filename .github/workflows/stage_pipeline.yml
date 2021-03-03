@@ -58,18 +58,19 @@ jobs:
     - name: Test with pytest
       run: |
         pytest
-    
-  deploy:
+
+  bandit-scan:
     needs: [test]
     runs-on: ubuntu-latest
+    name: bandit static code check
+
     steps:
+    # Checkout the code from GitHub
       - uses: actions/checkout@v2
-      - name: Login to Docker Hub
-        uses: docker/login-action@v1
+    # Runs a pre configured Bandit scan 
+      - name: Run bandit
+        uses: jpetrucciani/bandit-check@master
         with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
-      - name: Build Docker image
-        run: docker build . -t mgrum/flask-example-cicd:stage
-      - name: Push Docker image
-        run: docker push mgrum/flask-example-cicd:stage
+        # only scans under this path
+          path: './flaskr'  
+
