@@ -58,3 +58,19 @@ jobs:
     - name: Test with pytest
       run: |
         pytest
+
+  bandit-scan:
+    needs: [test]
+    runs-on: ubuntu-latest
+    name: bandit static code check
+
+    steps:
+    # Checkout the code from GitHub
+      - uses: actions/checkout@v2
+    # Runs a pre configured Bandit scan 
+      - name: Run bandit
+        uses: jpetrucciani/bandit-check@master
+        with:
+        # only scans under this path
+          path: './flaskr'  
+
