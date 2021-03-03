@@ -72,7 +72,7 @@ jobs:
         uses: jpetrucciani/bandit-check@master
         with:
         # only scans under this path
-          path: './flaskr'
+          path: '.'
   
   shift-scan:
     needs: [test]
