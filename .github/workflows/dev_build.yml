@@ -62,7 +62,7 @@ jobs:
   bandit-scan:
     needs: [test]
     runs-on: ubuntu-latest
-    name: static code check bandit 
+    name: bandit static code check
 
     steps:
     # Checkout the code from GitHub
@@ -78,6 +78,7 @@ jobs:
     needs: [test]
     # Scan runs on ubuntu, mac and windows
     runs-on: ubuntu-latest
+    name: shift static code check
     steps:
     # Checkout the code from GitHub
     - uses: actions/checkout@v1
