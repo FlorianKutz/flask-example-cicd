@@ -62,7 +62,7 @@ jobs:
         pytest
 
   bandit-scan:
-    needs: [build]
+    needs: [test]
     runs-on: ubuntu-latest
     name: static code check bandit 
 
@@ -77,7 +77,7 @@ jobs:
           path: './flaskr'
   
   Scan-Build:
-    needs: [build]
+    needs: [test]
     # Scan runs on ubuntu, mac and windows
     runs-on: ubuntu-latest
     steps:
