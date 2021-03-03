@@ -38,10 +38,13 @@ jobs:
         
   test:
     needs: [build]
-    # Runs on ubuntu image
     runs-on: ubuntu-latest
     steps:
-    # Checkout the code from GitHub
+    - uses: actions/checkout@v2
+    - name: Set up Python 3.x
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
     - name: Display Python version
       run: python -c "import sys; print(sys.version)"
     - name: Install dependencies
